@@ -18,7 +18,7 @@ module TwitterPics
     def pull
       timeline = Twitter.media_timeline(@user)
 
-      last_photo = Photo.find(:first, :order => "status_create_date DESC")
+      last_photo = Photo.find(:first, :conditions => { :twitter_user => @user }, :order => "status_create_date DESC")
 
       timeline.each do |t|
         status = Twitter::Client.new.status(t.id, {:include_entities => true})
@@ -27,6 +27,7 @@ module TwitterPics
 
         status.media.each do |m|
           photo = Photo.new
+          photo.twitter_user = @user
           photo.url = m.media_url
           photo.caption = status.text
           photo.status_id = status.id

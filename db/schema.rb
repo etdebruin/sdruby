@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831220705) do
+ActiveRecord::Schema.define(:version => 20120831232142) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120831220705) do
     t.text     "s3_url"
     t.integer  "status_id"
     t.datetime "status_create_date"
+    t.string   "twitter_user"
   end
 
   create_table "podcasts", :force => true do |t|
