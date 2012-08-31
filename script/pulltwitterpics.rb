@@ -30,7 +30,7 @@ module TwitterPics
           photo.url = m.media_url
           photo.caption = status.text
           photo.status_id = status.id
-          photo_status_create_date = status.created_at
+          photo.status_create_date = status.created_at
           photo.save
         end
       end

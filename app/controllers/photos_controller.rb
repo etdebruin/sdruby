@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
-  
+
   def index
-    @photos = Photo::meetup
+    @photos = Photo.all
   end
 end
