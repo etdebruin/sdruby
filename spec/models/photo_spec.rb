@@ -9,7 +9,8 @@
 #  updated_at :datetime
 #
 
-class Photo < ActiveRecord::Base
-  #attr_accessor :url, :caption
+require 'spec_helper'
 
+describe Photo do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

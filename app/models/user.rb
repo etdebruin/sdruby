@@ -1,3 +1,35 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                    :integer          not null, primary key
+#  full_name             :string(255)
+#  email                 :string(255)
+#  type                  :string(255)
+#  about                 :text
+#  links                 :text
+#  avatar_file_name      :string(255)
+#  avatar_content_type   :string(255)
+#  avatar_file_size      :integer
+#  crypted_password      :string(255)      not null
+#  password_salt         :string(255)      not null
+#  persistence_token     :string(255)      not null
+#  single_access_token   :string(255)      not null
+#  perishable_token      :string(255)      not null
+#  login_count           :integer          default(0), not null
+#  failed_login_count    :integer          default(0), not null
+#  created_at            :datetime
+#  updated_at            :datetime
+#  github_username       :string(255)
+#  started_using_ruby_on :date
+#  neighborhood          :string(255)
+#  available_for_work    :boolean
+#  show_email            :boolean          default(FALSE)
+#  admin                 :boolean          default(FALSE)
+#  role                  :string(255)
+#  sort                  :integer          default(0)
+#
+
 require 'net/http'
 require "open-uri"
 
